@@ -315,3 +315,45 @@ print(df.loc[df["Profit"].idxmin()])
 #largest individual profit
 print("\n--- Largest Individual Profit ---")
 print(df.loc[df["Profit"].idxmax()])
+
+
+
+
+
+
+
+
+
+
+
+
+
+# ==========================================
+# EXPORT ANALYSIS RESULTS
+# ==========================================
+
+import os
+
+# Creating outputs folder if they dont exist
+os.makedirs("outputs", exist_ok=True)
+
+# Export cleaned master dataset
+df.to_csv("outputs/cleaned_sales.csv", index=False)
+
+# Export analysis tables
+region_analysis.to_csv("outputs/regional_analysis.csv")
+category_analysis.to_csv("outputs/category_analysis.csv")
+subcategory_analysis.to_csv("outputs/subcategory_analysis.csv")
+segment_analysis.to_csv("outputs/segment_analysis.csv")
+yearly_analysis.to_csv("outputs/yearly_analysis.csv")
+monthly_analysis.to_csv("outputs/monthly_analysis.csv")
+monthly_year_analysis.to_csv("outputs/monthly_year_analysis.csv")
+state_analysis.to_csv("outputs/state_analysis.csv")
+loss_analysis.to_csv("outputs/loss_by_category.csv")
+regional_loss.to_csv("outputs/loss_by_region.csv")
+
+print("\n================================")
+print("ALL ANALYSIS FILES EXPORTED!")
+print("================================")
+
+print("\nFiles saved in the outputs folder.")
